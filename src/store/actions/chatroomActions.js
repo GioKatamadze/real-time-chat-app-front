@@ -1,5 +1,5 @@
-import { getChatrooms, getSingleChatroom } from "services";
-import { singleChatroomActions } from "store/slices";
+import { getChatrooms, getSingleChatroom } from "services/chatroomServices.js";
+import { singleChatroomActions, chatroomsActions } from "store/slices/index.js";
 
 export const fetchChatrooms = () => {
   return async (dispatch) => {
@@ -9,8 +9,8 @@ export const fetchChatrooms = () => {
     };
 
     try {
-      const chatrooms = await fetchChatroomsInfo();
-      dispatch(chatroomsActions.fetchChatroom(chatrooms));
+      const chatroom = await fetchChatroomsInfo();
+      dispatch(chatroomsActions.fetchChatroom(chatroom));
     } catch (error) {}
   };
 };

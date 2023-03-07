@@ -4,6 +4,7 @@ const initialState = {
   chatroom: {
     id: 0,
     title: "",
+    messages: [],
   },
 };
 
