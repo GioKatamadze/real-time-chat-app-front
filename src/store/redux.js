@@ -4,7 +4,7 @@ import {
   singleChatroomReducer,
   authReducer,
   usersReducer,
-} from "./slices";
+} from "./slices/index.js";
 import { authApi } from "services/authServices.js";
 
 const store = configureStore({

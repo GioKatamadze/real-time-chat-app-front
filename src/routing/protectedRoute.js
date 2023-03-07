@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import SignIn from "pages/sign-in/signin";
+import SignIn from "pages/sign-in/signin.jsx";
 
 const ProtectedRoute = () => {
   const { userInfo } = useSelector((state) => state.auth);

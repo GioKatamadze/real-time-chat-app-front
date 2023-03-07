@@ -5,7 +5,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "routing/protectedRoute.js";
 
-import SignIn from "pages/sign-in/signin";
+import SignIn from "pages/sign-in/signin.jsx";
+import SignUp from "pages/sign-up/signup.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           {/* <Route path="/" element={<Home />} /> */}
         </Route>
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );

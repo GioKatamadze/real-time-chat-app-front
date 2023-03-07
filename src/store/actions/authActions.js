@@ -1,10 +1,10 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const apiURL = `${process.env.REACT_APP_API_URL}`;
+const apiURL = `http://localhost:5000`;
 
 export const userLogin = createAsyncThunk(
-  "auth//login",
+  "auth/login",
   async ({ email, password }, { rejectWithValue }) => {
     try {
       const config = {
@@ -34,7 +34,7 @@ export const userLogin = createAsyncThunk(
 
 export const registerUser = createAsyncThunk(
   "auth/register",
-  async ({ email, password }, { rejectWithValue }) => {
+  async ({ name, email, password }, { rejectWithValue }) => {
     try {
       const config = {
         headers: {
@@ -42,7 +42,11 @@ export const registerUser = createAsyncThunk(
         },
       };
 
-      await axios.post(apiURL + "/api/register", { email, password }, config);
+      await axios.post(
+        apiURL + "/api/register",
+        { name, email, password },
+        config
+      );
       console.log(apiURL + "/api/register");
     } catch (error) {
       if (error.response && error.response.data.message) {

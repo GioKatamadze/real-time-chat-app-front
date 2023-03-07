@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-// import { userLogin } from "store/actions/authActions.js";
+import { userLogin } from "store/actions/authActions.js";
 import { HashLink } from 'react-router-hash-link';
 
 import Error from "components/error/error";
