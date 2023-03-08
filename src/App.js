@@ -8,6 +8,7 @@ import ProtectedRoute from "routing/protectedRoute.js";
 import SignIn from "pages/sign-in/signin.jsx";
 import SignUp from "pages/sign-up/signup.jsx";
 import Home from "pages/home/home.jsx";
+import ChatRoom from "pages/chatroom/ChatRoom.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Route>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/chatroom/:id" element={<ChatRoom />} />
       </Routes>
     </div>
   );

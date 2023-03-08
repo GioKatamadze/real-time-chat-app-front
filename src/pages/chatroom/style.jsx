@@ -52,7 +52,6 @@ export const StyledForm = styled.div`
         transition: all 0.2s ease;
         text-decoration: inherit;
         margin-top: 20px;
-        margin-bottom: 20px;
         &:not(:disabled):hover {
             cursor: pointer;
             color: #1d1c1c;
@@ -90,13 +89,13 @@ export const Chatroom = styled.div`
       text-decoration: inherit;
       transition: all 0.2s ease;
     }
-    .chatroomDiv {
+    .buttonDiv, #home {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 48px;
-        background: #3e5eb6;
+        background: #fc4747;
         border: 0 solid transparent;
         border-radius: 6px;
         transition: all 0.2s ease;

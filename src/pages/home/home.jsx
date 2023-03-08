@@ -3,31 +3,39 @@ import {StyledContainer, Chatroom, StyledForm} from "./style.jsx";
 import * as React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router';
 import { logout } from "store/slices/authSlice.js";
 import { Navigate } from "react-router-dom"
-import { HashLink } from 'react-router-hash-link';
 
-import { fetchChatrooms } from "store/actions/chatroomActions.js";
+import { fetchChatrooms, fetchSingleChatroom } from "store/actions/chatroomActions.js";
 
 
 
 const Home = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const chatrooms = useSelector((state) => state.chatrooms.items);
     const { userInfo } = useSelector((state) => state.auth)
 
+
+
     const AllChatrooms = chatrooms.map((chatroom) => {
-        const path = "/chatroom/" + `${chatroom.id}`
+        const navigateChatroom = () => {
+            navigate('/chatroom/' + chatroom.id, { state: { from: location } });
+            dispatch(fetchSingleChatroom(chatroom.id))
+          };
 
         return (
             <Chatroom 
             key={chatroom.title}
             >
-                <div className='buttonDiv'>
-                    <HashLink className="button" smooth to={path}>
+                <div className='chatroomDiv'>
+                    <button className="button" onClick={navigateChatroom}>
                         {chatroom.title}
-                    </HashLink>
+                    </button>
                 </div> 
             </Chatroom>  
         )
