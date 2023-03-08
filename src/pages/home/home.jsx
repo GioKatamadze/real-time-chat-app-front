@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import { logout } from "store/slices/authSlice.js";
 import { Navigate } from "react-router-dom"
-import { HashLink } from 'react-router-hash-link';
 import { fetchChatrooms, fetchSingleChatroom } from "store/actions/chatroomActions.js";
 import { fetchUsers } from "store/actions/usersActions.js";
 import {StyledContainer, Chatroom, StyledForm} from "./style.jsx";
+
 
 const Home = () => {
 
@@ -37,7 +37,7 @@ const Home = () => {
     useEffect(() => {
         dispatch(fetchChatrooms());
         dispatch(fetchUsers())
-      }, [dispatch, HashLink]);
+      }, [dispatch]);
 
     return (
     <StyledContainer>
@@ -58,9 +58,6 @@ const Home = () => {
                         <Navigate to='/signin'/>
                     )}
                 </div> 
-
-                
-                
             </div>
         </StyledForm>
     </StyledContainer>
