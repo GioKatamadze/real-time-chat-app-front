@@ -11,3 +11,7 @@ export const getSingleChatroom = (id) => {
 export const addMessage = (data) => {
   return instance.post("/message", data);
 };
+
+export const getUsers = () => {
+  return instance.get("/users");
+};

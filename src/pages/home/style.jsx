@@ -2,22 +2,22 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
     height: 100vh;
+    width: 100vw;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #10141e;
+    background-color: #3765a9;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 `;
 
 export const StyledForm = styled.div`
-    transform: translateY(-40px);
-    background-color: #161d2f;
+    background-color: #152c4f;
     border-radius: 10px;
-    width: 75vw;
+    width: 75%;
     max-width: 400px;
     padding: 24px;
-    margin-top: 50px;
     h2 {
       font-size: 22px;
       font-weight: 300;
@@ -40,19 +40,18 @@ export const StyledForm = styled.div`
       text-decoration: inherit;
       transition: all 0.2s ease;
     }
-    .buttonDiv, #home {
+    .buttonDiv {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 48px;
-        background: #fc4747;
+        background: #fc4747af;
         border: 0 solid transparent;
         border-radius: 6px;
         transition: all 0.2s ease;
         text-decoration: inherit;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 30px;
         &:not(:disabled):hover {
             cursor: pointer;
             color: #1d1c1c;
@@ -69,7 +68,6 @@ export const StyledForm = styled.div`
 `;
 
 export const Chatroom = styled.div`
-    width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -95,6 +93,7 @@ export const Chatroom = styled.div`
         justify-content: center;
         align-items: center;
         width: 100%;
+        max-width: 400px;
         height: 48px;
         background: #3e5eb6;
         border: 0 solid transparent;
@@ -114,15 +113,5 @@ export const Chatroom = styled.div`
             opacity: 0.6;
             cursor: not-allowed;
         }
-    }
-    @media (min-width: 768px) {
-        width: calc(100% - 2.7%);
-        margin-left: 2.7%;
-        gap: 3%;
-    }
-    @media (min-width: 1440px) {
-        width: 100%;
-        margin-left: 0;
-        gap: 2%;
     }
 `

@@ -9,6 +9,8 @@ import Button from "./button/register-button.jsx";
 import Error from "components/error/error.jsx";
 import Spinner from "components/spinner/spinner.jsx";
 
+import toast from 'react-hot-toast';
+
 import { StyledForm, Paragraph } from "./style.jsx"
 
 const RegisterForm = () => {
@@ -20,10 +22,15 @@ const RegisterForm = () => {
   const { register, handleSubmit } = useForm()
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+    
   
   useEffect(() => {
     if (userInfo) navigate('/')
-    if (success) navigate('/signin')
+    if (success) {
+      navigate('/signin')
+      toast.success('Registered Successfully!')
+    }
   }, [navigate, userInfo, success])
 
   const submitForm = (data) => {
