@@ -23,8 +23,9 @@ const ChatRoom = () => {
     }
 
     const AllMessages = feedback.messages.map((message) => {
+        setTimeout(Scroll, 1500);
         if (message.userId === userInfo._id) {
-            setTimeout(Scroll, 1500);
+            
             return  (
                 <div className="mychatWrapper" >
                     <h3 className="myauthor">{userInfo.name}</h3>                   
@@ -34,7 +35,6 @@ const ChatRoom = () => {
                 </div>)
         } else {
             let specificUser = allUsers.find(person => person.id === message.userId);
-            setTimeout(Scroll, 1500);
             return (
                 <div className="otherchatWrapper" >
                     <h3 className="otherauthor">{specificUser.name}</h3>
