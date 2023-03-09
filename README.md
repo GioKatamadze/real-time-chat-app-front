@@ -1,5 +1,7 @@
 # Real-time Chat App
 
+![Design preview for the Entertainment web app](./src/chatapp.jpg)
+
 ### Links
 
 - Live Site URL: [Live](https://chat-app-giokat.netlify.app/)
