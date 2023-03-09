@@ -1,15 +1,12 @@
 import "./reset.css";
 import "./index.css";
-
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "routing/protectedRoute.js";
-
 import SignIn from "pages/sign-in/signin.jsx";
 import SignUp from "pages/sign-up/signup.jsx";
 import Home from "pages/home/home.jsx";
 import ChatRoom from "pages/chatroom/ChatRoom.jsx";
-
 import { Toaster } from "react-hot-toast";
 
 function App() {

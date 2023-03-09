@@ -7,7 +7,6 @@ export const fetchUsers = () => {
       const response = await getUsers();
       return response.data;
     };
-
     try {
       const users = await fetchUsersInfo();
       dispatch(usersActions.fetchUsers(users));

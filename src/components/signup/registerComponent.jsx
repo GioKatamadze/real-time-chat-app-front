@@ -4,13 +4,10 @@ import { useForm } from 'react-hook-form'
 import { useNavigate  } from 'react-router-dom';
 import { registerUser } from "store/actions/authActions.js";
 import { HashLink } from 'react-router-hash-link';
-
 import Button from "./button/register-button.jsx";
 import Error from "components/error/error.jsx";
 import Spinner from "components/spinner/spinner.jsx";
-
 import toast from 'react-hot-toast';
-
 import { StyledForm, Paragraph } from "./style.jsx"
 
 const RegisterForm = () => {
@@ -23,8 +20,6 @@ const RegisterForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-    
-  
   useEffect(() => {
     if (userInfo) navigate('/')
     if (success) {
@@ -54,28 +49,24 @@ const RegisterForm = () => {
                     name="name"
                     {...register('name')}
                     required/>
-
                 <input
                     type="email"
                     placeholder="Email address"
                     name="email"
                     {...register('email')}
                     required/>
-
                 <input
                     type="password"
                     placeholder="Password"
                     name="password"
                     {...register('password')}
                     required/>
-
                 <input
                     type="password"
                     placeholder="Repeat password"
                     name="confirmPassword"
                     {...register('confirmPassword')}
                     required/>
-
                 <Button 
                     className="button" 
                     type="submit" 
@@ -83,13 +74,11 @@ const RegisterForm = () => {
                     >
                       {loading ? <Spinner /> : 'Create an account'}
                 </Button>
-
                     <Paragraph>
                         Already have an account? 
                         <HashLink className="nostyle" smooth to="/signin">Login</HashLink>
                     </Paragraph>
             </form>
-
         </StyledForm>
     )
 }

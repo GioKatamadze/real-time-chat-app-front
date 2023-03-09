@@ -15,7 +15,6 @@ const singleChatroomSlice = createSlice({
     fetchChatrooms: (state, action) => {
       state.feedback = action.payload;
     },
-
     addMessage: (state, action) => {
       const clone = state.chatroom;
       clone.messages.push(action.payload);

@@ -6,7 +6,7 @@ import {
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_API_URL + "/api",
+    baseUrl: process.env.REACT_APP_API_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.userToken;
       if (token) {

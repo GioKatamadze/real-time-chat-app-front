@@ -7,7 +7,6 @@ export const fetchChatrooms = () => {
       const response = await getChatrooms();
       return response.data;
     };
-
     try {
       const chatroom = await fetchChatroomsInfo();
       dispatch(chatroomsActions.fetchChatroom(chatroom));
@@ -21,7 +20,6 @@ export const fetchSingleChatroom = (id) => {
       const response = await getSingleChatroom(id);
       return response.data;
     };
-
     try {
       const chatroom = await fetchSingleChatroom();
       dispatch(singleChatroomActions.fetchChatrooms(chatroom));

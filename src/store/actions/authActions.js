@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const apiURL = `http://localhost:5000`;
+const apiURL = `https://real-time-chat-app-back-production.up.railway.app`;
 
 export const userLogin = createAsyncThunk(
   "auth/login",

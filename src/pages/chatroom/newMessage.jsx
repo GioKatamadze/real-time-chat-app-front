@@ -12,7 +12,6 @@ const NewMessage = (props) => {
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
   const { id } = useParams();
-  const limit = 1000;
 
   const Scroll = () => {
     let scroll_to_bottom = document.getElementById("chatWrapper")
@@ -59,9 +58,6 @@ const NewMessage = (props) => {
         onChange={messageHandler}
         onKeyDown={backspace}
       ></textarea>
-      {/* <div >
-        <span >{limit - message.length} Characters left</span>
-      </div> */}
       <button type='button' onClick={onAddMessage}>send</button>
     </StyledContainer>
   );
