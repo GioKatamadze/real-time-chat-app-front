@@ -12,7 +12,7 @@ export const StyledContainer = styled.div`
 
 export const StyledForm = styled.div`
     background-color: #203451;
-    height: 84vh;
+    max-height: 84vh;
     color: white;
     width: 100vw;
     max-width: 600px;
