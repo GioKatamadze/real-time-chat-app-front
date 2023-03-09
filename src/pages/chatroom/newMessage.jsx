@@ -12,6 +12,7 @@ const NewMessage = (props) => {
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
   const { id } = useParams();
+  const limit = 1000;
 
   const Scroll = () => {
     let scroll_to_bottom = document.getElementById("chatWrapper")
