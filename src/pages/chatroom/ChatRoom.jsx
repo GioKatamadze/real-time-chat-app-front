@@ -19,13 +19,14 @@ const ChatRoom = () => {
 
     const Scroll = () => {
         let scroll_to_bottom = document.getElementById("chatWrapper")
-        scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
+        if ( scroll_to_bottom ) {
+            scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
+          }
     }
 
     const AllMessages = feedback.messages.map((message) => {
-        setTimeout(Scroll, 1500);
         if (message.userId === userInfo._id) {
-            
+            setTimeout(Scroll, 1500);
             return  (
                 <div className="mychatWrapper" >
                     <h3 className="myauthor">{userInfo.name}</h3>                   
@@ -35,6 +36,7 @@ const ChatRoom = () => {
                 </div>)
         } else {
             let specificUser = allUsers.find(person => person.id === message.userId);
+            setTimeout(Scroll, 1500);
             return (
                 <div className="otherchatWrapper" >
                     <h3 className="otherauthor">{specificUser.name}</h3>
@@ -45,9 +47,9 @@ const ChatRoom = () => {
         }
     })
 
-    setTimeout(() => {
-        dispatch(fetchSingleChatroom(id))
-      }, 2000)
+    // setTimeout(() => {
+    //     dispatch(fetchSingleChatroom(id))
+    //   }, 2000)
 
     useEffect(() => {
         dispatch(fetchChatrooms());
