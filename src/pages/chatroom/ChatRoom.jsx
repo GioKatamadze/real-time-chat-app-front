@@ -28,7 +28,7 @@ const ChatRoom = () => {
         if (message.userId === userInfo._id) {
             setTimeout(Scroll, 1500);
             return  (
-                <div className="mychatWrapper" >
+                <div key={message.id} className="mychatWrapper" >
                     <h3 className="myauthor">{userInfo.name}</h3>                   
                     <div className="myMessage">
                         <p className="message">{message.content}</p>
@@ -38,7 +38,7 @@ const ChatRoom = () => {
             let specificUser = allUsers.find(person => person.id === message.userId);
             setTimeout(Scroll, 1500);
             return (
-                <div className="otherchatWrapper" >
+                <div key={message.id} className="otherchatWrapper" >
                     <h3 className="otherauthor">{specificUser.name}</h3>
                     <div className="otherMessage">
                         <p className="message">{message.content}</p>
@@ -47,9 +47,9 @@ const ChatRoom = () => {
         }
     })
 
-    // setTimeout(() => {
-    //     dispatch(fetchSingleChatroom(id))
-    //   }, 2000)
+    setTimeout(() => {
+        dispatch(fetchSingleChatroom(id))
+      }, 2000)
 
     useEffect(() => {
         dispatch(fetchChatrooms());

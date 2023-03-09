@@ -31,7 +31,7 @@ const NewMessage = (props) => {
   };
 
   const onAddMessage = async () => {
-    if (message.trim().length > 3) {
+    if (message.trim().length > 1) {
       const messageObj = {
         content: message,
         chatroomId: +props.chatroomId,
